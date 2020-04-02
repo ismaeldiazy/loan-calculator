@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-function Header() {
-    return (
-        <h1>Hi World</h1>
-    )
-}
+const Header = ({title}) => (
+    <Fragment>
+        <h1>{ title }</h1>
+    </Fragment>
+);
 
 export default Header;
