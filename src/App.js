@@ -1,8 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Header from './components/Header.js';
 import Form from './components/Form.js';
 
 function App() {
+  // Define the state
+  const [amount, storeAmount] = useState(0);
+
   return (
     <Fragment>
       
@@ -11,7 +14,10 @@ function App() {
         description="Use the form to obtain a loan calculation"
       />
     <div className="container">
-      <Form></Form>
+      <Form 
+        amount={amount}
+        storeAmount={storeAmount}
+      />
     </div>
 
     </Fragment>
