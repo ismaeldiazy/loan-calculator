@@ -5,6 +5,7 @@ import Form from './components/Form.js';
 function App() {
   // Define the state
   const [amount, storeAmount] = useState(0);
+  const [timePeriod, storePeriod] = useState("");
 
   return (
     <Fragment>
@@ -17,6 +18,8 @@ function App() {
       <Form 
         amount={amount}
         storeAmount={storeAmount}
+        timePeriod={timePeriod}
+        storePeriod={storePeriod}
       />
     </div>
 
