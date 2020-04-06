@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import { calculateTotal } from '../helpers';
 
-const Form = ({amount, storeAmount, timePeriod, storePeriod}) => {
+const Form = (props) => {
+    // Props
+    const {amount, storeAmount, timePeriod, storePeriod, total, storeTotal} = props;
     // Define state
     const [error, storeError] = useState(false);
 
@@ -18,16 +20,16 @@ const Form = ({amount, storeAmount, timePeriod, storePeriod}) => {
         // Remove previous error
         storeError(false);
 
-        // Calculate loan
+        // Calculate total loan payment
         const total = calculateTotal(amount, timePeriod);
-        console.log(total);
-
+        
+        // Store total
+        storeTotal(total);
     }
 
     return (
         <Fragment>
         <form onSubmit={ calculateLoan }>
-            {timePeriod}
             <div className="row">
                 <div>
                     <label>Cantidad Prestamo</label>
